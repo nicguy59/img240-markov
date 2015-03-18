@@ -3,6 +3,10 @@ class StoriesController < ApplicationController
 
   def index
     @authors = Story::AUTHORS
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def show

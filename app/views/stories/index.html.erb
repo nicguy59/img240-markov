@@ -1,6 +1,8 @@
 <div class='home-text'>
   <p>Some poginant literature created with <%= link_to 'Markov chains', 'http://en.wikipedia.org/wiki/Markov_chain' %> – just one of the many weird things you can do when you know how to program computers...</p>
 
+  <p>Want to include this in your app? Use the <%= link_to 'handy JSON feed', stories_path(format: :json) %>!</p>
+
   <ul class='author-list'>
     <% @authors.each do |key, name| %>
       <li><%= link_to name, story_path(id: key) %></li>
