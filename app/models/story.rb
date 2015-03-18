@@ -13,8 +13,6 @@ class Story
 
   def initialize(author_key)
     @author_key = author_key.to_sym
-    Rails.logger.ap author_key
-    #fail author_key
     fail ArgumentError, 'Unknown author' unless AUTHORS.key?(@author_key)
   end
 
