@@ -1,0 +1,9 @@
+<div>
+  <h1 class='story-title'>A strange story by <%= @story.author_name %></h1>
+
+  <div class='story-text'>
+    <%= simple_format(@story.to_s) %>
+  </div>
+
+  <%= link_to 'Do you feel lucky?', story_path(id: @story.random_other_author), class: 'lucky-btn' %>
+</div>
