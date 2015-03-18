@@ -1,0 +1,131 @@
+body {
+  font-family: Georgia;
+  &:after {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background: image_url('bg.jpg') 50% 50% no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    transition: opacity 1000ms linear;
+
+  }
+
+  &:hover, &:focus {
+    &:after {
+      opacity: 0.65;
+    }
+  }
+}
+
+p, li {
+  line-height: 2;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  margin: 0 0 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #999;
+  font-variant: small-caps;
+}
+
+.page {
+  position: relative;
+  z-index: 2;
+  max-width: 35em;
+  margin: 4em auto;
+}
+
+
+.story-text {
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  background: rgba(#fff, 0.3);
+}
+
+.nav {
+  margin: 1em auto;
+  text-align: center;
+
+  .btn {
+    display: inline-block;
+    border-radius: 0.5em;
+    padding: 0.5em 2em;
+    text-align: center;
+    color: #fff;
+    background: #333;
+  }
+}
+
+/// page specific
+
+body.story-none {
+  &, & a { color: #eaeaea; }
+  a { text-decoration: underline; text-transform: uppercase; }
+
+  .page {
+    max-width: none;
+    width: 100%;
+    position: absolute;
+    bottom: 2em;
+  }
+
+  .home-text {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    font-size: 110%;
+    text-align: center;
+    background: rgba(#000, 0.5);
+  }
+
+  ul, li { margin: 0; padding: 0; list-style: none; }
+
+  li {
+    display: inline-block;
+    a { padding: 0.5em 1em; }
+  }
+
+  &:after {
+    opacity: 1;
+  }
+}
+
+body.story-sendak:after {
+  background-image: image_url('bg-sendak.jpg');
+}
+
+body.story-seuss:after {
+  background-image: image_url('bg-seuss.jpg');
+}
+
+body.story-de_andrade:after {
+  background-image: image_url('bg-de-andrade.jpg');
+}
+
+body.story-mandelstam {
+  .story-title { color: #8E0000; }
+  &:after {
+    background-image: image_url('bg-mandelstam.jpg');
+  }
+}
+
+body.story-poe {
+  color: #fff;
+  .story-text {
+    background: rgba(#000, 0.3);
+  }
+  &:after {
+    opacity: 0.9;
+    background-image: image_url('bg-poe.jpg');
+  }
+}

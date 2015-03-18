@@ -5,5 +5,8 @@
     <%= simple_format(@story.to_s) %>
   </div>
 
-  <%= link_to 'Do you feel lucky?', story_path(id: @story.random_other_author), class: 'lucky-btn' %>
+  <nav class='nav'>
+    <%= link_to 'This is amazing', story_path(id: @story.random_other_author), class: 'btn' %>
+    <%= link_to 'That’s enough', root_path, class: 'btn' %>
+  </nav>
 </div>
